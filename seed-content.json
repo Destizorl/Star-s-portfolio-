@@ -1,0 +1,31 @@
+{
+  "heroTitle": "Little Miss\nGraduate.",
+  "heroLead": "A curious mind with a passion for engineering, creativity, good food and building meaningful digital communities. I bring ideas to life through skill, service and imagination.",
+  "about": [
+    "I'm Star Jennie — an electrical engineer with a creative side and a people-first approach. My interests and professional skills span engineering, food services, online community management and visual design.",
+    "Whether I'm solving a technical challenge, creating a memorable food experience or helping a digital community thrive, I enjoy bringing care, precision and fresh ideas to everything I do."
+  ],
+  "services": [
+    {
+      "icon": "ϟ",
+      "title": "Electrical Engineering",
+      "description": "Technical thinking, practical problem-solving and an engineering mindset focused on safe, thoughtful solutions."
+    },
+    {
+      "icon": "♨",
+      "title": "Catering",
+      "description": "Food preparation and catering with attention to flavour, presentation and a welcoming experience."
+    },
+    {
+      "icon": "◎",
+      "title": "Web Community Management",
+      "description": "Supporting online communities through communication, engagement and organized digital interaction."
+    },
+    {
+      "icon": "✳",
+      "title": "Graphic Design",
+      "description": "Creative visual communication, thoughtful layouts and graphics that help ideas stand out."
+    }
+  ],
+  "works": []
+}
