@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#07152d"><title>Star Jennie | Website Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#07152d;--lime:#b7f500;--line:#dbe5f7;--muted:#40516a;--blue:#102b55}*{box-sizing:border-box}body{margin:0;background:#f3f6fc;color:var(--navy);font:15px 'DM Sans',sans-serif}.shell{max-width:1080px;margin:30px auto;padding:0 18px}.top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:22px}.brand{font:800 22px Manrope}.pill{background:#eaffb9;padding:7px 12px;border-radius:30px;font-size:12px;font-weight:800}.panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:23px;margin:15px 0;box-shadow:0 12px 30px #102b5510}.panel h2{font:800 20px Manrope;margin:0 0 16px}.field{display:grid;gap:7px;margin:13px 0}label{font-weight:700;font-size:13px;color:#17263d}input,textarea,select{width:100%;border:1px solid #c3d0e2;border-radius:10px;padding:11px 12px;font:14px 'DM Sans';color:#101f36;background:white}textarea{min-height:88px;resize:vertical}.btn{border:0;border-radius:99px;background:var(--lime);padding:12px 19px;font-weight:800;cursor:pointer;color:var(--navy)}.btn.secondary{background:#eef3fb;border:1px solid var(--line)}.btn.danger{background:#fff0f0;color:#9c2020}.actions,.workhead{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}.hidden{display:none!important}.hint{color:#34445b;font-size:13px;line-height:1.6}.status{font-size:13px;color:#1e3a5f}.error{color:#a32222}.login{max-width:460px;margin:10vh auto}.service-row,.work{border:1px solid var(--line);border-radius:14px;padding:15px;margin:12px 0}.preview-img{max-width:220px;max-height:220px;object-fit:contain;border:1px solid var(--line);border-radius:12px;background:#f5f7fb;padding:4px}.work-preview{width:150px;height:110px;object-fit:cover;border-radius:10px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.color-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.color-field{border:1px solid var(--line);border-radius:12px;padding:12px}.color-field input[type=color]{height:44px;padding:3px;cursor:pointer}.modal{position:fixed;inset:0;background:#07152de8;z-index:9999;padding:18px;display:flex;flex-direction:column;gap:12px}.modal-head{display:flex;justify-content:space-between;align-items:center;color:white;gap:12px;flex-wrap:wrap}.preview-stage{flex:1;min-height:0;background:#e7edf7;border-radius:12px;overflow:auto;display:flex;justify-content:center;padding:10px}.preview-stage iframe{width:100%;height:100%;border:0;background:white;border-radius:8px}.preview-stage.mobile iframe{width:390px;max-width:100%;box-shadow:0 0 0 8px #162b4a}.section-note{padding:12px 14px;background:#f0f5ff;border-radius:12px;color:#30445f;font-size:13px;line-height:1.5}@media(max-width:650px){.shell{margin:18px auto}.panel{padding:17px}.top{align-items:flex-start;flex-direction:column}.grid2,.color-grid{grid-template-columns:1fr 1fr}.actions .btn{flex:1}.modal{padding:9px}}@media(max-width:390px){.color-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="top"><div class="brand">Star Jennie <span class="pill">Website Manager</span></div><a class="hint" href="/">← View public website</a></header>
+  <section id="auth" class="panel login">
+    <h2>Sign in to manage your website</h2><p class="hint">Only an administrator explicitly authorised in the Supabase project can edit this website.</p>
+    <div class="field"><label for="email">Administrator email</label><input id="email" type="email" autocomplete="username" placeholder="you@example.com"></div>
+    <div class="field"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" placeholder="Your password"></div>
+    <button class="btn" id="login">Sign in</button><p id="authMessage" class="hint" role="status"></p>
+  </section>
+  <div id="editor" class="hidden">
+    <section class="panel"><div class="workhead"><h2>Hero section</h2><span class="pill">Public homepage</span></div>
+      <div class="field"><label for="heroTitle">Main heading (use a new line to split)</label><textarea id="heroTitle"></textarea></div>
+      <div class="field"><label for="heroLead">Introduction</label><textarea id="heroLead"></textarea></div>
+      <div class="grid2">
+        <div class="field"><label for="heroImageFile">Replace the lady's photograph</label><input id="heroImageFile" type="file" accept="image/jpeg,image/png,image/webp"><p class="hint">JPG, PNG or WEBP · maximum 8 MB. The original image remains embedded as a fallback.</p><img id="heroImagePreview" class="preview-img hidden" alt="Hero photo preview"><p id="heroImageStatus" class="hint">Original embedded portrait is active unless you upload a replacement.</p><button id="resetHero" class="btn secondary" type="button">Use original embedded photo</button></div>
+        <div>
+          <div class="field"><label for="heroImagePosition">Photo alignment</label><select id="heroImagePosition"><option value="left bottom">Left</option><option value="center bottom">Centre</option><option value="right bottom">Right</option><option value="center center">Centre vertically</option></select></div>
+          <div class="field"><label for="heroImageScale">Photo scale</label><input id="heroImageScale" type="range" min="0.8" max="1.25" step="0.05"><span id="scaleValue" class="hint">100%</span></div>
+          <div class="field"><label for="heroImageFit">Image fitting</label><select id="heroImageFit"><option value="contain">Fit whole image (no cropping)</option><option value="cover">Fill frame (may crop edges)</option></select></div>
+          <p class="section-note">The image is never stretched out of proportion. Use “Fit whole image” for the safest desktop and mobile result.</p>
+        </div>
+      </div>
+    </section>
+    <section class="panel"><h2>About me</h2><div class="field"><label for="about1">Paragraph 1</label><textarea id="about1"></textarea></div><div class="field"><label for="about2">Paragraph 2</label><textarea id="about2"></textarea></div></section>
+    <section class="panel"><div class="workhead"><h2>Skills &amp; services</h2><button class="btn secondary" id="addService" type="button">+ Add service</button></div><div id="services"></div></section>
+    <section class="panel"><div class="workhead"><h2>Portfolio works</h2><button class="btn secondary" id="addWork" type="button">+ Add work</button></div><p class="hint">Add work samples, images and descriptions. Changes remain unpublished until you save.</p><div id="works"></div></section>
+    <section class="panel"><h2>Appearance &amp; colours</h2><p class="hint">Choose the main brand colours. The preview updates before you publish.</p><div class="color-grid">
+      <div class="color-field"><label for="colorNavy">Navy / main text</label><input id="colorNavy" type="color" value="#07152d"></div>
+      <div class="color-field"><label for="colorBlue">Secondary blue</label><input id="colorBlue" type="color" value="#102b55"></div>
+      <div class="color-field"><label for="colorLime">Lime / buttons</label><input id="colorLime" type="color" value="#b7f500"></div>
+      <div class="color-field"><label for="colorGreen">Heading highlight</label><input id="colorGreen" type="color" value="#5fae00"></div>
+      <div class="color-field"><label for="colorGray">Body copy</label><input id="colorGray" type="color" value="#35445b"></div>
+      <div class="color-field"><label for="colorBg">Page background</label><input id="colorBg" type="color" value="#ffffff"></div>
+      <div class="color-field"><label for="colorFooter">Footer background</label><input id="colorFooter" type="color" value="#07152d"></div>
+    </div><div class="actions" style="margin-top:14px"><button class="btn secondary" id="resetTheme" type="button">Restore original colours</button></div></section>
+    <section class="panel"><div class="actions"><button class="btn secondary" id="preview" type="button">Preview changes</button><button class="btn" id="save" type="button">Save &amp; publish</button><button class="btn secondary" id="logout" type="button">Sign out</button><span id="saveStatus" class="status" role="status"></span></div><p class="hint">Preview is private to this browser and does not publish anything. Save &amp; publish makes the changes visible to visitors.</p></section>
+  </div>
+</main>
+<div id="previewModal" class="modal hidden" role="dialog" aria-modal="true" aria-label="Website preview"><div class="modal-head"><strong>Preview — not published</strong><div class="actions"><button class="btn secondary" id="desktopPreview" type="button">Desktop</button><button class="btn secondary" id="mobilePreview" type="button">Mobile</button><button class="btn" id="closePreview" type="button">Close preview</button></div></div><div id="previewStage" class="preview-stage"><iframe id="previewFrame" title="Unsaved website preview"></iframe></div></div>
+<script type="module" src="/src/admin.js"></script>
+</body></html>
